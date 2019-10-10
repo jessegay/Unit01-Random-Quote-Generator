@@ -80,12 +80,12 @@ function printQuote() {
   // Create a variable for the HTML string and set it equal to an empty string.
   var htmlQuote = '';
   // Use the HTML template in the instructions or the markup in the index.html file, AND the random quote vairable to build your HTML string.
-  var htmlQuote = '<p class="quote">' + randomQuote.quote + '</p>';
-  htmlQuote += 
+  htmlQuote = '<p class="quote">' + randomQuote.quote + '</p>';
+  htmlQuote += '<p class="source">' + randomQuote.source + '</p>';
   // Set the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = htmlQuote; 
 }
-//alert(printQuote());
+
 
 /***
   When the "Show another quote" button is clicked, the event listener 
