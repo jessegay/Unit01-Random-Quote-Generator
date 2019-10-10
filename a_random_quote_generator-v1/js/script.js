@@ -86,6 +86,10 @@ function printQuote() {
   if (randomQuote.hasOwnProperty('citation')) {
     htmlQuote += '<span class="citation">' + randomQuote.citation + '</span>';
   }
+  //Use an if statement to check for the year property before adding it to the HTML string.
+  if (randomQuote.hasOwnProperty('year')) {
+    htmlQuote += '<span class="year">' + randomQuote.year + '</span>' + '</p>';
+  }
 
   // Set the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = htmlQuote; 
