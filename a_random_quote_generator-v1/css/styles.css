@@ -71,6 +71,15 @@ body {
   font-style: normal;
 }
 
+.tag:before {
+  content: ", ";
+  font-style: normal;
+}
+
+.tag {
+  font-size: .8rem;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;

@@ -24,13 +24,15 @@ var quotes = [
      quote: 'Two men enter, one man leaves.',
      source: 'Bartertown crowd',
      citation: 'Wikipedia',
-     year: 1985
+     year: 1985,
+     tag: 'Movies'
     },
     {
       quote: 'Bodhi, this is your wake-up call man. I am an F, B, I, Agent!',
       source: 'Johnny Utah',
       citation: 'Point Break',
-      year: 1991
+      year: 1991,
+      tag: 'Movies'
     },
     {
       quote: 'How inappropriate to call this planet Earth when it is quite clearly Ocean.',
@@ -39,6 +41,7 @@ var quotes = [
     {
       quote: 'You miss 100% of the shots you don’t take.',
       source: 'Wayne Gretzky',
+      tag: 'Sports'
     }
 ];
 
@@ -88,9 +91,12 @@ function printQuote() {
   }
   //Use an if statement to check for the year property before adding it to the HTML string.
   if (randomQuote.hasOwnProperty('year')) {
-    htmlQuote += '<span class="year">' + randomQuote.year + '</span>' + '</p>';
+    htmlQuote += '<span class="year">' + randomQuote.year + '</span>' ;
   }
-
+  //Check for tag property.
+  if (randomQuote.hasOwnProperty('tag')) {
+    htmlQuote += '<span class="tag">' + randomQuote.tag + '</span>' + '</p>';
+  }
   // Set the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = htmlQuote; 
 }
