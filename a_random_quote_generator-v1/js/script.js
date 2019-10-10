@@ -54,7 +54,7 @@ var quotes = [
 
 function getRandomQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length)); // Note it's not length+1 since array begins at 0.
-  alert(randomNumber);
+  //alert(randomNumber);
   var randomQuote = quotes[randomNumber];
   return randomQuote;
 }
@@ -75,10 +75,17 @@ function getRandomQuote() {
 ***/
 
 function printQuote() {
+  // Call the `getRandomQuote` function and assign it to a variable.
   var randomQuote = getRandomQuote();
+  // Create a variable for the HTML string and set it equal to an empty string.
+  var htmlQuote = '';
+  // Use the HTML template in the instructions or the markup in the index.html file, AND the random quote vairable to build your HTML string.
   var htmlQuote = '<p class="quote">' + randomQuote.quote + '</p>';
-  return htmlQuote;
+  htmlQuote += 
+  // Set the `innerHTML` of the `quote-box` div to the HTML string
+  document.getElementById('quote-box').innerHTML = htmlQuote; 
 }
+//alert(printQuote());
 
 /***
   When the "Show another quote" button is clicked, the event listener 
@@ -90,7 +97,7 @@ function printQuote() {
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
+
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
 
 
-// Do you see this? Checking github.
