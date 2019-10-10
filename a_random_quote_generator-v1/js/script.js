@@ -99,8 +99,11 @@ function printQuote() {
   }
   // Set the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = htmlQuote; 
-  // Change background color
-  document.body.style.backgroundColor = "red";
+  // Change background color. Get random hex color and assign to .backgroundColor.
+  var randomHexColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomHexColor;
+  // Change button color to match.
+  document.getElementById('loadQuote').style.backgroundColor = "#" + randomHexColor;
 }
 
 
