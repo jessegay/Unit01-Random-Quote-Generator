@@ -1,20 +1,18 @@
 /******************************************
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
+Jesse Gay - jesse@teamtreehouse.com
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
-
-
 /*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
+This project creates a webpage that displays a randomly selected quote from an array of quotes.
+The color of the page changes to a random color each time a new quote is generated.
+
+Concepts used: object, variable, optional property, array, box notation, function,conditional statement, CSS,
+HTML, event listener.
 ***/
 
+// Array of quotes. 
 var quotes = [
   {
      quote: 'We will, we will, rock you.',
@@ -45,16 +43,7 @@ var quotes = [
     }
 ];
 
-// console.log(quotes);
-
-
-
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
-
+// Function to return a random selection from quotes array.
 function getRandomQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length)); // Note it's not length+1 since array begins at 0.
   //alert(randomNumber);
@@ -62,42 +51,27 @@ function getRandomQuote() {
   return randomQuote;
 }
 
-//var test = getRandomQuote();
-//console.log(test.quote);
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
 function printQuote() {
-  // Call the `getRandomQuote` function and assign it to a variable.
+  // Generate randomly selected quote.
   var randomQuote = getRandomQuote();
-  // Create a variable for the HTML string and set it equal to an empty string.
+  // Create empty variable for HTML to be placed on page.
   var htmlQuote = '';
-  // Use the HTML template in the instructions or the markup in the index.html file, AND the random quote vairable to build your HTML string.
+  // Build HTML string using properties of randomQuote object.
   htmlQuote = '<p class="quote">' + randomQuote.quote + '</p>';
   htmlQuote += '<p class="source">' + randomQuote.source ;
-  //Use an if statement to check for the citation property before adding it to the HTML string.
+  // Conditional statements to check for additional properties. If they exist, they are added to htmlQuote.
   if (randomQuote.hasOwnProperty('citation')) {
     htmlQuote += '<span class="citation">' + randomQuote.citation + '</span>';
   }
-  //Use an if statement to check for the year property before adding it to the HTML string.
+  
   if (randomQuote.hasOwnProperty('year')) {
     htmlQuote += '<span class="year">' + randomQuote.year + '</span>' ;
   }
-  //Check for tag property.
+  
   if (randomQuote.hasOwnProperty('tag')) {
     htmlQuote += '<span class="tag">' + randomQuote.tag + '</span>' + '</p>';
   }
-  // Set the `innerHTML` of the `quote-box` div to the HTML string
+  // Set `innerHTML` of the `quote-box` div to the HTML string.
   document.getElementById('quote-box').innerHTML = htmlQuote; 
   // Change background color. Get random hex color and assign to .backgroundColor.
   var randomHexColor = Math.floor(Math.random()*16777215).toString(16);
@@ -106,18 +80,7 @@ function printQuote() {
   document.getElementById('loadQuote').style.backgroundColor = "#" + randomHexColor;
 }
 
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
-
+// Event listener to allow button click to call printQuote().
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
 
 
