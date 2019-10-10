@@ -99,6 +99,8 @@ function printQuote() {
   }
   // Set the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = htmlQuote; 
+  // Change background color
+  document.body.style.backgroundColor = "red";
 }
 
 
