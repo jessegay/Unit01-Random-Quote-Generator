@@ -9,7 +9,7 @@ This project creates a webpage that displays a randomly selected quote from an a
 The color of the page changes to a random color each time a new quote is generated.
 A new quote is displayed every 20 seconds
 Concepts used: object, variable, optional property, array, box notation, function,conditional statement, CSS,
-HTML, event listener, timer.
+HTML, event listener, timer, comment.
 ***/
 
 // Array of quotes. 
@@ -40,6 +40,12 @@ var quotes = [
       quote: 'You miss 100% of the shots you don’t take.',
       source: 'Wayne Gretzky',
       tag: 'Sports'
+    },
+    {
+      quote: 'The Earth is a very small stage in a vast cosmic arena.',
+      source: 'Carl Sagan',
+      tag: 'Wisdom'
+     
     }
 ];
 
@@ -80,6 +86,7 @@ function printQuote() {
   document.getElementById('loadQuote').style.backgroundColor = "#" + randomHexColor;
 }
 
+printQuote();
 // Event listener to allow button click to call printQuote().
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
