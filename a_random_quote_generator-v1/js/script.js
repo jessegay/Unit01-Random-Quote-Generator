@@ -7,9 +7,9 @@ Jesse Gay - jesse@teamtreehouse.com
 /*** 
 This project creates a webpage that displays a randomly selected quote from an array of quotes.
 The color of the page changes to a random color each time a new quote is generated.
-
+A new quote is displayed every 20 seconds
 Concepts used: object, variable, optional property, array, box notation, function,conditional statement, CSS,
-HTML, event listener.
+HTML, event listener, timer.
 ***/
 
 // Array of quotes. 
@@ -83,4 +83,6 @@ function printQuote() {
 // Event listener to allow button click to call printQuote().
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+// Load new quote after 20 seconds if no activity from user. 
+setInterval(printQuote, 20000);
 
