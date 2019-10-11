@@ -51,7 +51,7 @@ var quotes = [
 
 // Function to return a random selection from quotes array.
 function getRandomQuote() {
-  var randomNumber = Math.floor(Math.random() * (quotes.length)); // Note it's not length+1 since array begins at 0.
+  var randomNumber = Math.floor(Math.random() * (quotes.length)); 
   var randomQuote = quotes[randomNumber];
   return randomQuote;
 }
