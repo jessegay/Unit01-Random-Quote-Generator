@@ -52,13 +52,11 @@ var quotes = [
 // Function to return a random selection from quotes array.
 function getRandomQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length)); // Note it's not length+1 since array begins at 0.
-  //alert(randomNumber);
   var randomQuote = quotes[randomNumber];
   return randomQuote;
 }
 
 function printQuote() {
-  // Generate randomly selected quote.
   var randomQuote = getRandomQuote();
   // Create empty variable for HTML to be placed on page.
   var htmlQuote = '';
@@ -79,10 +77,10 @@ function printQuote() {
   }
   // Set `innerHTML` of the `quote-box` div to the HTML string.
   document.getElementById('quote-box').innerHTML = htmlQuote; 
-  // Change background color. Get random hex color and assign to .backgroundColor.
+  // Get random hex color and assign to .backgroundColor.
   var randomHexColor = Math.floor(Math.random()*16777215).toString(16);
   document.body.style.backgroundColor = "#" + randomHexColor;
-  // Change button color to match.
+  // Change button color to match .backgroundColor.
   document.getElementById('loadQuote').style.backgroundColor = "#" + randomHexColor;
 }
 
@@ -90,6 +88,6 @@ printQuote();
 // Event listener to allow button click to call printQuote().
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-// Load new quote after 20 seconds if no activity from user. 
+// Load new quote after 20 seconds.
 setInterval(printQuote, 20000);
 
