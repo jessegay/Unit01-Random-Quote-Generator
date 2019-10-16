@@ -73,8 +73,10 @@ function printQuote() {
   }
   
   if (randomQuote.hasOwnProperty('tag')) {
-    htmlQuote += '<span class="tag">' + randomQuote.tag + '</span>' + '</p>';
+    htmlQuote += '<span class="tag">' + randomQuote.tag + '</span>';
   }
+  // Add closing '</p>' irrespective of conditional statements.
+  htmlQuote += '</p>';
   // Set `innerHTML` of the `quote-box` div to the HTML string.
   document.getElementById('quote-box').innerHTML = htmlQuote; 
   // Get random hex color and assign to .backgroundColor.
